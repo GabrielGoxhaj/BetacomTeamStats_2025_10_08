@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace BetacomTeamStats_2025_10_08.BLogic
 {
-    internal class EmployeesFerie
+    internal class EmployeesBusinessTrip
     {
-        public static List<Employees> PrintEmployeesFerie()
+        public static List<Employees> PrintEmployeesBusinessTrip()
         {
-            List<Employees> listEmployeesFerie = [];
-            List<EmployeesActivities> listEmployeesActivitiesFerie = [];
+            List<Employees> listEmployeesBusinessTrip = [];
+            List<EmployeesActivities> listEmployeesActivitiesBusinessTrip = [];
 
             string rowSeparator = new string('-', 100);
 
@@ -37,7 +37,7 @@ namespace BetacomTeamStats_2025_10_08.BLogic
                     continue;
                 }
 
-                listEmployeesFerie.Add(new Employees
+                listEmployeesBusinessTrip.Add(new Employees
                 {
                     Matricola = fields[0],
                     NomeCognome = fields[1],
@@ -62,7 +62,7 @@ namespace BetacomTeamStats_2025_10_08.BLogic
                 {
                     continue;
                 }
-                listEmployeesActivitiesFerie.Add(new EmployeesActivities
+                listEmployeesActivitiesBusinessTrip.Add(new EmployeesActivities
                 {
                     Data = fields[0],
                     Luogo = fields[1],
@@ -72,19 +72,19 @@ namespace BetacomTeamStats_2025_10_08.BLogic
             }
 
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Lavoratori in ferie di Betacom Group");
+            Console.WriteLine("Lavoratori in trasferta di Betacom Group");
             Console.WriteLine(rowSeparator);
             Console.ForegroundColor = ConsoleColor.White;
 
-            foreach (var employeeActivity in listEmployeesActivitiesFerie)
+            foreach (var employeeActivity in listEmployeesActivitiesBusinessTrip)
             {
-                if (employeeActivity.Luogo == "Ferie")
+                if (employeeActivity.Luogo == "Trasferta")
                 {
-                    foreach (var employee in listEmployeesFerie)
+                    foreach (var employee in listEmployeesBusinessTrip)
                     {
                         if (employeeActivity.Matricola == employee.Matricola)
                         {
-                            Console.WriteLine($"Il dipendente {employee.NomeCognome} n° {employee.Matricola} ha fatto ferie in data {employeeActivity.Data}");
+                            Console.WriteLine($"Il dipendente {employee.NomeCognome} n° {employee.Matricola} ha fatto trasferta in data {employeeActivity.Data} - Luogo: {employee.Città}");
                         }
                         else
                         {
@@ -101,7 +101,7 @@ namespace BetacomTeamStats_2025_10_08.BLogic
             Console.ForegroundColor = ConsoleColor.White;
             Loading.LoadingMenu();
 
-            return listEmployeesFerie;
+            return listEmployeesBusinessTrip;
         }
     }
 }

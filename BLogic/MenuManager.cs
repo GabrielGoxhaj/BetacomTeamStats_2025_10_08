@@ -18,8 +18,8 @@ namespace BetacomTeamStats_2025_10_08.BLogic
             Console.WriteLine("1. Mostra i lavoratori con età compresa tra i 40 e 50 anni");
             Console.WriteLine("2. Mostra i lavoratori che hanno fatto ferie");
             Console.WriteLine("3. Mostra i lavoratori che sono stati in ufficio");
-            Console.WriteLine("4. ");
-            Console.WriteLine("5. ");
+            Console.WriteLine("4. Mostra i lavoratori lazzaroni nullafacenti");
+            Console.WriteLine("5. Mostra i lavoratori che hanno fatto trasferte");
             Console.WriteLine("6. ");
             Console.WriteLine("7. ");
             Console.WriteLine("8. Mostra i lavoratori per gruppo di età");
@@ -46,7 +46,7 @@ namespace BetacomTeamStats_2025_10_08.BLogic
                     EmployeesLazzaroni.PrintEmployeesLazzaroni();
                     break;
                 case 5:
-                    //FindEmployee.FindEmployeebyId();
+                    EmployeesBusinessTrip.PrintEmployeesBusinessTrip() ;
                     break;
                 case 6:
                     //FindEmployee.FindEmployeebyId();
