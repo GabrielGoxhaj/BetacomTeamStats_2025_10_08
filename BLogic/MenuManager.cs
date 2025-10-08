@@ -22,6 +22,7 @@ namespace BetacomTeamStats_2025_10_08.BLogic
             Console.WriteLine("5. ");
             Console.WriteLine("6. ");
             Console.WriteLine("7. ");
+            Console.WriteLine("8. Mostra i lavoratori per gruppo di età");
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("9. Chiudere il programma");
             Console.ForegroundColor = ConsoleColor.Blue;
@@ -52,6 +53,9 @@ namespace BetacomTeamStats_2025_10_08.BLogic
                     break;
                 case 7:
                     //FindEmployee.FindEmployeebyId();
+                    break;
+                case 8:
+                    EmployeesGroupByAge_Range10.PrintEmployeesByGroupOfAge();
                     break;
                 case 9:
                     Console.WriteLine("Adieau e buon caffè");
