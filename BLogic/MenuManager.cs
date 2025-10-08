@@ -17,7 +17,7 @@ namespace BetacomTeamStats_2025_10_08.BLogic
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("1. Mostra i lavoratori con età compresa tra i 40 e 50 anni");
             Console.WriteLine("2. Mostra i lavoratori che hanno fatto ferie");
-            Console.WriteLine("3. ");
+            Console.WriteLine("3. Mostra i lavoratori che sono stati in ufficio");
             Console.WriteLine("4. ");
             Console.WriteLine("5. ");
             Console.WriteLine("6. ");
@@ -39,7 +39,7 @@ namespace BetacomTeamStats_2025_10_08.BLogic
                     EmployeesFerie.PrintEmployeesFerie();
                     break;
                 case 3:
-                    //FileManager.ReadNotWorkingEmployeesFile();
+                    EmployeesUfficio.PrintEmployeesUfficio();
                     break;
                 case 4:
                     //FileManager.ReadActivitiesFile();
