@@ -7,9 +7,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="DataModel\" />
-    <Folder Include="BLogic\" />
-  </ItemGroup>
-
 </Project>
