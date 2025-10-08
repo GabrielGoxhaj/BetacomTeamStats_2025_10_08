@@ -42,7 +42,7 @@ namespace BetacomTeamStats_2025_10_08.BLogic
                     EmployeesUfficio.PrintEmployeesUfficio();
                     break;
                 case 4:
-                    //FileManager.ReadActivitiesFile();
+                    EmployeesLazzaroni.PrintEmployeesLazzaroni();
                     break;
                 case 5:
                     //FindEmployee.FindEmployeebyId();
