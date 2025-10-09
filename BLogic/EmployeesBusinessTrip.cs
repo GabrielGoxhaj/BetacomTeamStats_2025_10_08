@@ -71,6 +71,8 @@ namespace BetacomTeamStats_2025_10_08.BLogic
                 });
             }
 
+            var BusinessTripData = new List<(string Città, string Matricola)>();
+            var LocationCount = new List<(int Count, string Luogo)>();
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Lavoratori in trasferta di Betacom Group");
             Console.WriteLine(rowSeparator);
@@ -84,16 +86,17 @@ namespace BetacomTeamStats_2025_10_08.BLogic
                     {
                         if (employeeActivity.Matricola == employee.Matricola)
                         {
-                            Console.WriteLine($"Il dipendente {employee.NomeCognome} n° {employee.Matricola} ha fatto trasferta in data {employeeActivity.Data} - Luogo: {employee.Città}");
-                        }
-                        else
-                        {
-                            continue;
+                            BusinessTripData.Add((employee.Città, employee.Matricola));
+                            BusinessTripData = BusinessTripData.DistinctBy(x => x.Matricola).ToList();
                         }
                     }
                 }
             }
-
+            var groupedByCity = BusinessTripData.GroupBy(x => x.Città).Select(g => new{Città = g.Key,Count = g.Count()}).ToList();
+            foreach (var group in groupedByCity)
+            {
+                Console.WriteLine($"{group.Città} - {group.Count}");
+            }
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(rowSeparator);
             Console.WriteLine("Premi un tasto per tornare al menù principale");
